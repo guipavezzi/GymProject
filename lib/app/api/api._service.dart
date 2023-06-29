@@ -4,7 +4,8 @@ import 'package:http/http.dart' as http;
 import 'package:gym_project/app/models/workouts.dart';
 
 class ApiService {
-  final String baseUrl = 'https://192.168.15.6:7280/Workout';
+  //Trocar a baseUrl pelo IP da máquina se tiver usando emulador ou o celular pessoal
+  final String baseUrl = 'https://{ipMaquina}:7280/Workout';
 
   Future<List<WorkoutsModel>> fetchWorkouts() async {
     final response = await http.get(Uri.parse(baseUrl));

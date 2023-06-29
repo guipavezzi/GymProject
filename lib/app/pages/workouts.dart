@@ -1,6 +1,6 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:gym_project/app/dto/api._service.dart';
+import 'package:gym_project/app/api/api._service.dart';
 import 'package:gym_project/app/models/workouts.dart';
 import 'package:gym_project/app/repositories/WorkoutRepository.dart';
 
@@ -14,7 +14,7 @@ class WorkOuts extends StatefulWidget {
 class _WorkOutsState extends State<WorkOuts> {
 
   final WorkoutRepository repository = WorkoutRepository(ApiService());
-  List<WorkoutsModel>? workoutData; // Atualize o tipo para List<Workouts>?
+  List<WorkoutsModel>? workoutData;
 
   @override
   void initState() {
@@ -29,7 +29,6 @@ class _WorkOutsState extends State<WorkOuts> {
         workoutData = data.cast<WorkoutsModel>();
       });
     } catch (e) {
-      // Trate o erro de acordo com as necessidades da sua aplicação
       print('Erro ao buscar os dados: $e');
     }
   }

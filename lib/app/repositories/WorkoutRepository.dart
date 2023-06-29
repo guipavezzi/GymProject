@@ -1,4 +1,4 @@
-import 'package:gym_project/app/dto/api._service.dart';
+import 'package:gym_project/app/api/api._service.dart';
 import 'package:gym_project/app/models/workouts.dart';
 
 class WorkoutRepository {
