@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:gym_project/app/api/api._service.dart';
@@ -104,7 +106,11 @@ class _WorkOutsState extends State<WorkOuts> {
                               ),
                             );
                           } else {
-                            return CircularProgressIndicator();
+                            return BackdropFilter(filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                                                  child: Container(
+                                                    color: Colors.transparent,
+                                                  ),
+                            );
                           }
                         },
                       );

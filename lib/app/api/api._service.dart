@@ -1,14 +1,22 @@
 import 'dart:convert';
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:gym_project/app/models/workouts.dart';
 
+
+
+
+
 class ApiService {
-  //Trocar a baseUrl pelo IP da máquina se tiver usando emulador ou o celular pessoal
-  final String baseUrl = 'https://{ipMaquina}:7280/Workout';
+  late String baseUrl = '';
 
   Future<List<WorkoutsModel>> fetchWorkouts() async {
-    final response = await http.get(Uri.parse(baseUrl));
+    
+    await dotenv.load(fileName: '.env');
+    final url = dotenv.env['APIURL'];
+    baseUrl = url ?? '';
+
+    final response = await http.get(Uri.parse(baseUrl + 'Workout'));
 
     if (response.statusCode == 200) {
       final List<dynamic> jsonList = jsonDecode(response.body);
