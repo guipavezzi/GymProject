@@ -15,7 +15,8 @@ class _ExcercisesState extends State<Excercises> {
     super.initState();
   }
 
-  String textoExplicativo = 'Você pode adicionar até 10 exercícios no aplicativo';
+  String textoExplicativo =
+      'Você pode adicionar até 10 exercícios no aplicativo';
 
   List<String> excercises = [
     "Extensora",
@@ -69,6 +70,10 @@ class _ExcercisesState extends State<Excercises> {
                         fontSize: constraints.maxWidth * 0.04,
                       ),
                     ),
+                    SizedBox(
+                      height: constraints.maxHeight *
+                          0.02,
+                    ),
                     Expanded(
                       child: ListView.builder(
                         itemCount: excercises.length,
@@ -86,14 +91,6 @@ class _ExcercisesState extends State<Excercises> {
                         },
                       ),
                     ),
-                    ElevatedButton(
-                      child: Icon(Icons.add),
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(),
-                        padding: EdgeInsets.all(constraints.maxWidth * 0.03),
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -101,6 +98,14 @@ class _ExcercisesState extends State<Excercises> {
           );
         },
       ),
+      floatingActionButton: Container(
+        margin: EdgeInsets.all(16.0),
+        child: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {},
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
