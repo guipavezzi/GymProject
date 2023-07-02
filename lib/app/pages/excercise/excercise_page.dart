@@ -22,12 +22,13 @@ class _ExcercisesState extends State<Excercises> {
     "Extensora",
     "Agachamento Livre",
     "LegPress",
-    "Hack",
     "Extensora",
     "Agachamento Livre",
     "LegPress",
-    "Hack",
-    "blabla"
+    "Extensora",
+    "Agachamento Livre",
+    "LegPress",
+    "Extensora",
   ];
 
   @override
@@ -61,18 +62,11 @@ class _ExcercisesState extends State<Excercises> {
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: constraints.maxHeight * 0.01,
-                    ),
                     Text(
                       textoExplicativo,
                       style: TextStyle(
                         fontSize: constraints.maxWidth * 0.04,
                       ),
-                    ),
-                    SizedBox(
-                      height: constraints.maxHeight *
-                          0.02,
                     ),
                     Expanded(
                       child: ListView.builder(
@@ -91,21 +85,21 @@ class _ExcercisesState extends State<Excercises> {
                         },
                       ),
                     ),
+                    Container(
+                      margin: EdgeInsets.only(bottom: constraints.maxWidth * 0.03),
+                      child: FloatingActionButton(onPressed: (){},
+                      child: Icon(Icons.add),
+                      mini: true,
+                      ),
+                    )
                   ],
                 ),
+                
               ),
             ),
           );
         },
       ),
-      floatingActionButton: Container(
-        margin: EdgeInsets.all(16.0),
-        child: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {},
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
