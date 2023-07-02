@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gym_project/app/pages/workouts.dart';
+import 'package:gym_project/app/pages/excercise/excercise_page.dart';
+import 'package:gym_project/app/pages/workout/workouts_page.dart';
 
 class AppGym extends StatelessWidget {
   const AppGym({super.key});
@@ -10,7 +11,8 @@ class AppGym extends StatelessWidget {
       title: 'Me Adote',
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => WorkOuts()
+        '/': (context) => Excercises(),
+        '/excercises':(context) =>  Excercises()
       },
     );
   }
